@@ -1,0 +1,54 @@
+{
+	"name": "poc_inferix",
+	"description": "General",
+	"database": {
+		"schemas": [
+			{
+				"schemaName": "public",
+				"tables": []
+			}
+		]
+	},
+	"envs": {
+		"env": [
+			[
+				"LOG_LEVEL",
+				"debug"
+			]
+		]
+	},
+	"cronJob": [],
+	"contractLog": [
+		{
+			"eventType": "OnDeviceRegistered",
+			"chainID": 4690,
+			"contractAddress": "0xFe214F5725e7308fd8BCe9BE5a65DC497fC2d324",
+			"blockStart": 23539144,
+			"blockEnd": 0,
+			"topic0": "0x05d7f0c690676ba31675b45bcdb9ff4c34bb10744ec89d329eacd93c79ecc029"
+		},
+		{
+			"eventType": "OnDeviceBinding",
+			"chainID": 4690,
+			"contractAddress": "0x2033e168F377E52BCCA977024b60e5264E93cA0c",
+			"blockStart": 23539144,
+			"blockEnd": 0,
+			"topic0": "0x9fd2c28ce9affee8592933156880418279ba95f7c71e344a71d1928a7c982979"
+		}
+	],
+	"chainHeight": [],
+	"eventRounting": [
+		{
+			"eventType": "OnDeviceRegistered",
+			"handler": "handle_device_registered"
+		},
+		{
+			"eventType": "OnDeviceBinding",
+			"handler": "handle_device_binding"
+		},
+		{
+			"eventType": "DATA",
+			"handler": "handle_data"
+		}
+	]
+}
