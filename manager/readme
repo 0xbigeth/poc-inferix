@@ -1,0 +1,5 @@
+build
+
+```
+tinygo build -o inferix_poc_manager.wasm -scheduler=none --no-debug -target=wasi main.go
+```
