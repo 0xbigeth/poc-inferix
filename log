@@ -1,0 +1,26 @@
+Adding minter:  0xffc634c534723E1aDE62fABBa252E33eF01E3e88  to token contract: 0xd67d33455dF9B16cC86963A0C4f5445355C9107A
+addMinter: {
+  hash: '0x71b5a06a446a0e577f2dec7fe14841535b3741b9e9ba9e9088a88df9385c0600',
+  type: 0,
+  accessList: null,
+  blockHash: '0xbc56af37214ef3fc15e10d9810242f6ea55fe86a8de287e077cf7c962f5effd2',
+  blockNumber: 23539168,
+  transactionIndex: 0,
+  confirmations: 1,
+  from: '0x152C78Bd6ceb6F58d58AB0E1168Fa9b948f3dCc0',
+  gasPrice: BigNumber { value: "1000000000000" },
+  gasLimit: BigNumber { value: "43991" },
+  to: '0xd67d33455dF9B16cC86963A0C4f5445355C9107A',
+  value: BigNumber { value: "0" },
+  nonce: 3,
+  data: '0x983b2d56000000000000000000000000ffc634c534723e1ade62fabba252e33ef01e3e88',
+  r: '0x12103419f7dfc204c8026aec31f3580946678e28e17e273649c5ccf23ddb7fc4',
+  s: '0x0387eb83a34d0987c06a7723609baec23906221aefd3cbdc508fba10e2c32288',
+  v: 9415,
+  creates: null,
+  chainId: 4690,
+  wait: [Function (anonymous)]
+}
+
+
+
