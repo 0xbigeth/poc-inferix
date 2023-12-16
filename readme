@@ -1,0 +1,4 @@
+# Build relayer for worker
+```
+tinygo build -o applets/ifx_worker_relayer.wasm -scheduler=none --no-debug -target=wasi ifx_worker_relayer/main.go
+```
