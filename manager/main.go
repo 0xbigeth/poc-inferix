@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/machinefi/w3bstream-wasm-golang-sdk/log"
@@ -9,6 +10,12 @@ import (
 
 func main() {}
 
+type w3bstreamPayload struct {
+	DeviceId string      `json:"deviceId"`
+	Type     string      `json:"type"`
+	Payload  interface{} `json:"payload"`
+}
+
 //export start
 func start(rid uint32) int32 {
 	return handle_data(rid)
@@ -16,15 +23,21 @@ func start(rid uint32) int32 {
 
 //export handle_result
 func handle_data(rid uint32) int32 {
-	log.Log(fmt.Sprintf("start rid: %d", rid))
+	log.Log(fmt.Sprintf("starting handle data rid: %d", rid))
 
-	message, err := stream.GetDataByRID(rid)
+	payloadBytes, err := stream.GetDataByRID(rid)
 	if err != nil {
-		log.Log("error: " + err.Error())
+		log.Log("error: cannot get data" + err.Error())
 		return -1
 	}
-	res := string(message)
-	log.Log(fmt.Sprintf("message received: %v", res))
+	log.Log(fmt.Sprintf("received payload: %v", string(payloadBytes)))
+
+	payload := w3bstreamPayload{}
+	err = json.Unmarshal(payloadBytes, &payload)
+	if err != nil {
+		log.Log("error: cannot parsing payload")
+		return -1
+	}
 	return 0
 }
 
